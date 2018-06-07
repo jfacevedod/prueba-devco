@@ -29,15 +29,14 @@ public class TodoPage extends PageObject {
     }
 
     public void eliminarTarea(String nombreTarea) {
+        WebElementFacade div = listTareas.findBy(By.xpath("//*[@id='todo-list']/li/div[contains(./label/text(),'"+nombreTarea+"')]"));
         WebElementFacade botonEliminar = listTareas.findBy(By.xpath("//*[@id='todo-list']/li/div[contains(./label/text(),'"+nombreTarea+"')]/button"));
-        botonEliminar.setWindowFocus();
-        botonEliminar.waitUntilClickable().click();
+        withAction().moveToElement(div).click(botonEliminar).perform();
     }
 
     public boolean estaLaTareaEnListaTareas(String nombreTarea){
-        WebElementFacade labelTarea = listTareas.findBy(By.xpath("//*[@id='todo-list']/li/div/label[contains(text(),'"+nombreTarea+"')]"));
-
-        return labelTarea.isCurrentlyVisible();
+        boolean labelTarea = listTareas.containsElements(By.xpath("//*[@id='todo-list']/li/div/label[contains(text(),'"+nombreTarea+"')]"));
+        return labelTarea;
     }
 
 
@@ -50,4 +49,3 @@ public class TodoPage extends PageObject {
 
 
 }
-

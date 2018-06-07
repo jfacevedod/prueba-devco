@@ -10,12 +10,12 @@ public class EliminarTareaSteps {
     @Step
     public void openPage(){
         page.open();
+        page.insertarTarea("tarea1");
     }
 
     @Step
     public void crearTarea (String nombreTarea) {
-     page.insertarTarea(nombreTarea);
-
+        page.insertarTarea(nombreTarea);
     }
 
 

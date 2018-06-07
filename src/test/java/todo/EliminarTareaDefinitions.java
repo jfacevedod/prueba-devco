@@ -35,7 +35,7 @@ public class EliminarTareaDefinitions {
     @Then("^se reduce el contador de tareas pendientes$")
     public void se_reduce_el_contador_de_tareas_pendientes() throws Exception {
         int cantidadTareasPendientes = eliminarTareaSteps.getTareasPendientes();
-        assertThat(cantidadTareasPendientes, is(0));
+        assertThat(cantidadTareasPendientes, is(1));
     }
 
 

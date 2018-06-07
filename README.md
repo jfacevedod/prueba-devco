@@ -9,7 +9,7 @@ The idea for this project is stolen from/inspired by the Cucumber Java Skeleton 
 This is a very minimal sample project using Cucumber and Serenity BDD in Java. 
 You can use this project as a quick starting point for your own projects.
 
-There is a single feature file with one scenario. The scenario has three steps, the last of which is pending. 
+There is a single feature file with one scenario. The scenario has three todo.steps, the last of which is pending. 
 
 ## Get the code
 

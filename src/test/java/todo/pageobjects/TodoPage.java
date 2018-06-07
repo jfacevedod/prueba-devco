@@ -8,6 +8,8 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.Keys;
 
+import java.util.List;
+
 
 @DefaultUrl("http://todomvc.com/examples/angularjs/#/")
 public class TodoPage extends PageObject {
@@ -27,13 +29,15 @@ public class TodoPage extends PageObject {
     }
 
     public void eliminarTarea(String nombreTarea) {
-        WebElementFacade botonEliminar = listTareas.selectByVisibleText(nombreTarea).findBy(".destroy");
-        botonEliminar.click();
+        WebElementFacade botonEliminar = listTareas.findBy(By.xpath("//*[@id='todo-list']/li/div[contains(./label/text(),'"+nombreTarea+"')]/button"));
+        botonEliminar.setWindowFocus();
+        botonEliminar.waitUntilClickable().click();
     }
 
     public boolean estaLaTareaEnListaTareas(String nombreTarea){
-        boolean existeTarea = listTareas.selectByVisibleText(nombreTarea).isPresent();
-        return existeTarea;
+        WebElementFacade labelTarea = listTareas.findBy(By.xpath("//*[@id='todo-list']/li/div/label[contains(text(),'"+nombreTarea+"')]"));
+
+        return labelTarea.isCurrentlyVisible();
     }
 
 

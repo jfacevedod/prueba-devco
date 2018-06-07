@@ -1,4 +1,8 @@
-### Application code
+### Recordar cambiar Ruta
+
+Se debe cambiar la Ruta en el archivo SERENITY.PROPERTIES (webdriver.chrome.driver = /Users/jfacevedod/develop/drivers/chromedriver)
+por la ruta donde se descargue el archivo.
+
+
+## Instalar webdrive para chrome
  
-These packages generally contain application code. 
-If you are writing a reusable test library, you can also place reusable test components such as Page Objects or Tasks here.
